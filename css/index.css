@@ -117,7 +117,6 @@ header .navbar a:hover {
 .home {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
     height: 90vh;
     align-items: center;
 }
@@ -256,6 +255,41 @@ header .navbar a:hover {
     color: var(--default)
   }
 
+  .footer {
+    background: #000;
+    text-align: center;
+  }
+
+  .footer .share {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer .share i {
+    font-size: 3rem;
+  }
+
+  .footer .credit {
+    padding: 2.5rem 1rem;
+    color: var(--myWhite);
+    font-weight: normal;
+    font-size: 2rem;
+  }
+
+  .footer .credit span{
+    color: #b17449;
+  }
+
+  .footer img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .footer img:hover {
+    transform: scale(1.5);
+  }
 
 @media (max-width:991px) {
     html {
@@ -269,9 +303,12 @@ header .navbar a:hover {
     section {
         padding: 2rem;
     }
+    .home{
+        margin-top: 10rem;
+    }
 }
 
-@media (max-width:768px) {
+@media (max-width:735px) {
     #menu-bar{
         display: initial;
     }
@@ -298,11 +335,28 @@ header .navbar a:hover {
         border-left: .5rem solid var(--default);
         background-color: #f7f7f7;
     }
+
+    .home{
+        margin-top: 5rem;
+        margin-bottom: 25rem;
+    }
+
+    .home .content{
+        padding-top: 13.5rem;
+    }
+    
+    .home .content h3{
+        font-size: 3rem;
+    }
 }
 
-@media (max-width:400px) {
+
+@media (max-width:500px) {
     html {
         font-size: 50%;
     }
-
+    .home{
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
 }
