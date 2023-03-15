@@ -117,7 +117,8 @@ header .navbar a:hover {
 .home {
     display: flex;
     flex-wrap: wrap;
-    height: 90vh;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
     align-items: center;
 }
 
@@ -291,6 +292,39 @@ header .navbar a:hover {
     transform: scale(1.5);
   }
 
+  #scroll-top{
+    position: fixed;
+    top: -120%;
+    right: 2rem;
+    padding: .5rem 1.5rem;
+    font-size: 4rem;
+    background: var(--default);
+    color: var(--myWhite);
+    border-radius: .5rem;
+    transition: .5s linear;
+    z-index: 1000;
+  }
+
+  #scroll-top.active {
+    top:calc(100% - 12rem);
+  }
+
+  .loader-container {
+    position: fixed;
+    top:0; left:0;
+    z-index: 10000;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .loader-container.fade-out{
+    top:-120%;
+  }
+
 @media (max-width:991px) {
     html {
         font-size: 55%;
@@ -302,9 +336,6 @@ header .navbar a:hover {
 
     section {
         padding: 2rem;
-    }
-    .home{
-        margin-top: 10rem;
     }
 }
 
