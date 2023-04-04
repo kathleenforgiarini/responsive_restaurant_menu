@@ -81,6 +81,13 @@ header .navbar a:hover {
     display: none;
 }
 
+.currentLink {
+  color: var(--myWhite) !important;
+  background-color: var(--default);
+  padding: 1rem;
+  border-radius: 5rem;
+}
+
 .btn {
     display: inline-block;
     padding: .8rem 3rem;
@@ -195,3 +202,37 @@ header .navbar a:hover {
   .loader-container.fade-out{
     top:-120%;
   }
+
+  @media (max-width:735px) {
+    #menu-bar{
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left:0;
+        right: 0;
+        background: #f7f7f7;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: .2rem solid rgba(0,0,0,.1);
+        border-left: .5rem solid var(--default);
+        background-color: #f7f7f7;
+        color: #601515 !important;
+    }
+
+    header .navbar a:hover {
+      color: white !important;
+  }
+}

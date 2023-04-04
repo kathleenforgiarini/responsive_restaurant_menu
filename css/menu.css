@@ -40,6 +40,8 @@
   flex-shrink: 0;
   object-fit: cover;
   margin-right: 1.5em;
+  border: 5px solid #e1dbc8;
+  border-radius: 10px;
 }
 
 .menu-item-text {
@@ -129,6 +131,8 @@
   height: 60px;
   object-fit: cover;
   margin-right: 10px;
+  border: 5px solid #e1dbc8;
+  border-radius: 10px;
 }
 
 .cart-item-name {

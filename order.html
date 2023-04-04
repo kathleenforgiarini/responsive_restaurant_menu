@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buon Appetito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="icon" href="images/icon.png">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="images/logo.png"></a>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html" class="currentLink">Order</a>
+            <a href="kitchen.html">Kitchen</a>
+        </nav>
+    </header>
+
+    <h1 class="heading">Order <span>Summary</span></h1>
+
+    <section id="main">
+        <section id="order">
+            <div id="order-summary"></div>
+            <ul class="cart-items">
+            </ul>
+            <p class="cart-total"></p>
+            <a href="menu.html" class="btn"> Add more items</a>
+        </section>
+
+        <section id="form">
+            <form action="#">
+                <div>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" required>
+                </div>
+                <div>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="birthday">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <button type="submit" id="submit" value="Submit">Place your order</button>
+            </form>
+        </section>
+    </section>
+
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="btn"><i class="fa-brands fa-whatsapp"></i> </a>
+            <a href="#" class="btn"><i class="fa-brands fa-facebook"></i> </a>
+            <a href="#" class="btn"><i class="fa-brands fa-instagram"></i> </a>
+            <a href="#" class="btn"><i class="fa-brands fa-twitter"></i> </a>
+        </div>
+        <h1 class="credit">created by <span>Kathleen Forgiarini da Silva</span> </h1>
+        <img src="images/logo-bg.png" alt="logo">
+    </section>
+
+    <a href="#" class="fas fa-angle-up" id="scroll-top"></a>
+
+    <div class="loader-container">
+        <img src="images/pizzagif.gif" alt="" srcset="">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+</body>
+
+</html>

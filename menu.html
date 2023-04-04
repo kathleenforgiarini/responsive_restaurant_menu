@@ -19,9 +19,9 @@
         <div id="menu-bar" class="fas fa-bars"></div>
         <nav class="navbar">
             <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="#order">Order</a>
-            <a href="#kitchen">Kitchen</a>
+            <a href="menu.html" class="currentLink">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="kitchen.html">Kitchen</a>
             <a class="cart-icon" id="cart-btn">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
@@ -34,10 +34,9 @@
             <a class="close-btn"><i class="fa-solid fa-x"></i></a>
         </div>
         <ul class="cart-items">
-            <!-- Cart items will be added dynamically with JavaScript -->
         </ul>
         <p class="cart-total">Total: $0.00</p>
-        <button class="checkout-btn">Place your order</button>
+        <button onclick="location.href = 'order.html'" class="checkout-btn">Place your order</button>
     </div>
 
     <section class="menu">
@@ -311,6 +310,7 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
