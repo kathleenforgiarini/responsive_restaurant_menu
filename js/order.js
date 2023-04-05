@@ -28,7 +28,8 @@ function displayData() {
         `;
     cartItems.appendChild(cartItem);
   }
-  //get the total
+
+  // starting with 0, it has a accumulator to sum the product of price and quantity of each element
   const total = cartData.reduce((acc, item) => acc + item.price * item.quantity, 0);
   cartTotal.textContent = `Total: $${total.toFixed(2)}`;
 
