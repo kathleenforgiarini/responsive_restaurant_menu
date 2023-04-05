@@ -27,7 +27,7 @@ function displayCart() {
             <div class="cart-item-quantity">
                 <input type="number" id="quantity-${item.id}" name="quantity-${item.id}" min="1" value="${item.quantity}" data-id="${item.id}">
             </div>
-            <i data-id="${item.id}" class="remove-from-cart fa-solid fa-trash"></i>
+            <i data-id="${cart.indexOf(item)}" class="remove-from-cart fa-solid fa-trash"></i>
           </div>
         </div>
       `;
@@ -93,9 +93,7 @@ function saveCart() {
 
 // remove items from the cart
 function removeFromCart(id) {
-    // get only the items that is different from the one that I removed
-    cart = cart.filter(i => i.id !== id);
-
+    cart.splice(id, 1);
     // update the quantity of items in the cart that shows in the menu
     cartBtn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i>(${cart.length})`;
     saveCart();

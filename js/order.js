@@ -22,7 +22,7 @@ function displayData() {
               <div class="cart-item-quantity">
                   <input type="number" id="quantity-${item.id}" name="quantity-${item.id}" min="1" value="${item.quantity}" data-id="${item.id}">
               </div>
-              <i data-id="${item.id}" class="remove-from-cart fa-solid fa-trash"></i>
+              <i data-id="${cartData.indexOf(item)}" class="remove-from-cart fa-solid fa-trash"></i>
             </div>
           </div>
         `;
@@ -60,13 +60,13 @@ function saveCart() {
 
 }
 
+// remove the item from the cart
 function removeFromCart(id) {
-  // get only the items that is different from the one that I removed
-  cartData = cartData.filter(i => i.id !== id);
+  cartData.splice(id, 1);
   saveCart();
 }
 
-// remove items from the cart
+// calls function to remove items from the cart
 cartItems.addEventListener('click', e => {
   if (e.target.classList.contains('remove-from-cart')) {
     const id = e.target.getAttribute('data-id');
@@ -97,7 +97,7 @@ button.addEventListener('click', (event) => {
     });
     localStorage.setItem('order', JSON.stringify(order))
 
-    alert("ORDER SENT. THANK YOU!")
+    alert("Order sent, thank you!")
 
     location.reload()
 
