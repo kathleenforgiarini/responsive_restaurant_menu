@@ -82,20 +82,74 @@ let order = JSON.parse(localStorage.getItem('order')) || [];
 
 button.addEventListener('click', (event) => {
   event.preventDefault()
-  let result = {}
 
-  for (const input of inputs) {
-    result[input.name] = input.value
+  // Validate inputs
+  const isValid = validateForm();
+  if (isValid) {
+    let result = {}
+
+    for (const input of inputs) {
+      result[input.name] = input.value
+    }
+
+    order.push({
+      result, cartData
+    });
+    localStorage.setItem('order', JSON.stringify(order))
+
+    alert("ORDER SENT. THANK YOU!")
+
+    location.reload()
+
+    localStorage.removeItem('cart')
   }
-
-  order.push({
-    result, cartData
-  });
-  localStorage.setItem('order', JSON.stringify(order))
-
-  window.location.href = 'kitchen.html';
-  
-  localStorage.removeItem('cart')
-
 });
 
+  // Validate inputs
+function validateForm() {
+  const nameInput = document.getElementById('fname');
+  const lnameInput = document.getElementById('lname');
+  const emailInput = document.getElementById('email');
+  const addressInput = document.getElementById('address');
+  const nameRegex = /^[a-zA-Z\s]*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const addressRegex = /^[a-zA-Z0-9\s,'-]*$/; // Apenas letras, números, espaços, apóstrofos, vírgulas e hifens são permitidos
+
+  // Validate first name
+  if (nameInput.value.trim() === '') {
+    alert('Please enter a valid first name.');
+    return false;
+  } else if (!nameRegex.test(nameInput.value)) {
+    alert('Please enter a valid first name containing only letters and spaces.');
+    return false;
+  }
+
+  // Validate lastname
+  if (lnameInput.value.trim() === '') {
+    alert('Please enter a valid last name.');
+    return false;
+  } else if (!nameRegex.test(lnameInput.value)) {
+    alert('Please enter a valid last name containing only letters and spaces.');
+    return false;
+  }
+
+  // Validate email
+  if (emailInput.value.trim() === '') {
+    alert('Please enter a valid email address.');
+    return false;
+  } else if (!emailRegex.test(emailInput.value)) {
+    alert('Please enter a valid email address');
+    return false;
+  }
+
+  // Validate address
+  if (addressInput.value.trim() === '') {
+    alert('Please enter a valid address.');
+    return false;
+  } else if (!addressRegex.test(addressInput.value)) {
+    alert('Please enter a valid address containing only letters, numbers, spaces, apostrophes, commas and hyphens.');
+    return false;
+  }
+
+  return true;
+}
